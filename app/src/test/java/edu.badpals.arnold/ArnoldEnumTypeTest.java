@@ -66,7 +66,7 @@ public class ArnoldEnumTypeTest {
 		assertEquals(66.107583, planeta.pesoSuperficie(pesoHumano), 0.001);
 	}
 
-/*	@Test
+	@Test
 	public void ArrayPlanetasTerrestresTest() {
 
 		String[] planetasTerrestres = new String[4];
@@ -82,9 +82,9 @@ public class ArnoldEnumTypeTest {
 		for (Planeta planeta : Planeta.getPlanetasTerrestres()) {
 			assertThat(planeta.name()).isIn(planetasTerrestres);
 		}
-	}*/
+	}
 
-/*	@Test
+	@Test
 	public void ArrayGigantesGaseosos() {
 
 		String[] gigantesGaseosos = new String[4];
@@ -102,5 +102,5 @@ public class ArnoldEnumTypeTest {
 		for (Planeta planeta : Planeta.getGigantesGaseosos()) {
 			assertThat(planeta.name()).isIn(gigantesGaseosos);
 		}
-	}*/
+	}
 }

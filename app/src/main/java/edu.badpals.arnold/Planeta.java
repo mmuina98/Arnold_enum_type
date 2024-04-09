@@ -1,5 +1,7 @@
 package edu.badpals.arnold;
 
+import java.util.EnumSet;
+
 public enum Planeta {
 
     MERCURY (3.303e+23, 2.4397e6),
@@ -13,7 +15,7 @@ public enum Planeta {
 
     private Double masa = 0d;
     private Double radio = 0d;
-    public static Double G = 6.67300E-11;
+    public static final Double G = 6.67300E-11;
 
     private Planeta(Double masa, Double radio) {
         this.masa = masa;
@@ -28,13 +30,20 @@ public enum Planeta {
         return radio;
     }
 
-
     private Double gravedadSuperficie(){
         return G * this.masa / (this.radio*this.radio);
     }
     public double pesoSuperficie(double pesoHumano) {
         Double masaHumano = pesoHumano / Planeta.EARTH.gravedadSuperficie();
         return masaHumano * this.gravedadSuperficie();
+    }
+
+    public static EnumSet<Planeta> getPlanetasTerrestres() {
+        return EnumSet.range(Planeta.MERCURY,Planeta.MARS);
+    }
+
+    public static EnumSet<Planeta> getGigantesGaseosos() {
+        return EnumSet.range(Planeta.JUPITER,Planeta.URANUS);
     }
 }
 
